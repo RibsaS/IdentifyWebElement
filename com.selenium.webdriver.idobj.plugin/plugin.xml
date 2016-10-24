@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Test Automation"
+            id="com.selenium.webdriver.idobj.plugin.commands.category">
+      </category>
+      <command
+            name="Web Object Identify"
+            categoryId="com.selenium.webdriver.idobj.plugin.commands.category"
+            id="com.selenium.webdriver.idobj.plugin.commands.sampleCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="com.selenium.webdriver.idobj.plugin.commands.sampleCommand"
+            class="com.selenium.webdriver.idobj.plugin.handlers.IdentifyObjectPlugin">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.selenium.webdriver.idobj.plugin.commands.sampleCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="Alt+Shift+I"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="Test Automation"
+               mnemonic="M"
+               id="com.selenium.webdriver.idobj.plugin.menus.sampleMenu">
+            <command
+                  commandId="com.selenium.webdriver.idobj.plugin.commands.sampleCommand"
+                  mnemonic="S"
+                  id="com.selenium.webdriver.idobj.plugin.menus.sampleCommand">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="com.selenium.webdriver.idobj.plugin.toolbars.sampleToolbar">
+            <command
+                  commandId="com.selenium.webdriver.idobj.plugin.commands.sampleCommand"
+                  icon="icons/sample.gif"
+                  tooltip="Web Object Identify"
+                  id="com.selenium.webdriver.idobj.plugin.toolbars.sampleCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>
