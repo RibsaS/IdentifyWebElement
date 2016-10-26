@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Demonstration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="imagetoolbar" content="no">
+    <meta name="generator" content="ActivePresenter"/>
+    <meta name="author" content="anassabi">
+    <meta name="copyright" content=" ()">
+    <meta name="description" content=""/>
+
+	<link href="player/mediaplayer.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="player/mediaplayer.js"></script>
+	
+	<script type="text/javascript">
+		_V_.options.flash.swf = "player/mediaplayer.swf";
+	</script>
+	
+</head>
+
+<body>
+<div align="center"><font size="5" color="blue"><strong>Sans titre </strong></font></div>
+
+<div align="center">
+	<video id="video_containter" class="video-js vjs-default-skin" controls preload="none" width="1366" height="768" poster="" data-setup="{}">
+		<source src="Demo.mp4" type="video/mp4" />
+		<!--
+		<track kind="captions" src="" srclang="fr_FR" label="Français" />
+		-->
+	</video>
+	
+	<div id="video_alt">You need <a href="http://get.adobe.com/flashplayer">Flash Player</a> to view this video.</div>
+	
+</div>
+
+<script type="text/javascript">
+	//remove alternative content when player ready
+	_V_("video_containter").ready(function(){
+		var element = document.getElementById("video_alt");
+		element.parentNode.removeChild(element);
+	});
+</script>
+
+
+</body>
+</html>
